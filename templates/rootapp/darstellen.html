@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUNIS</title>
+    <style>
+        .container {
+            background: rgb(84, 84, 169);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .center{
+            
+            height: 400px;
+            width: 400px;
+            background: rgb(53, 155, 53);
+
+            margin-left: 100px;
+            
+        }
+        .darstellen{
+            width: 100%;
+            height: 30px;
+
+        }
+        .center-container{
+            width: 100%;
+            height:90%;
+            background: rgb(165, 138, 87);
+        }
+         tr:nth-child(even){
+        background-color: rgba(126, 126, 137, 0.361);
+    }
+    tr:nth-child(odd){
+        background-color: rgb(178, 178, 194);
+        
+    }
+    .table-container{
+        position: relative;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        border-radius: 5px;
+    }
+    th {
+        background-color: rgb(54, 54, 54);
+        color: white;
+        border: 1px solid black;
+         /* border-radius: 5px; */
+    
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="center">
+            <h1 class="darstellen">darstellen</h1>
+            {{first.name}}
+            <div class="center-container">
+                <tbody>
+                    {% for x in data %}
+                    <tr>
+                        <td>
+                            {{x.price}}
+                        </td>
+                        <td>
+                            {{x.time}}
+                        </td>
+                        <td>
+                            {{x.name}}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+                
+                    
+
+              
+                
+            </div>
+        </div>        
+    </div>
+</body>
+</html>

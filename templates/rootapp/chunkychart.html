@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="chunkychart.css" rel="stylesheet"  type="text/css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    }
+    .table-container{
+        width: 100vw;
+        height: 50vh;
+        background: green;
+        overflow: scroll;
+        display: flex;
+        justify-content: space-evenly;
+       
+    
+    }
+    table{
+        width: 80%;
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+    th {
+        background-color: rgb(54, 54, 54);
+        color: white;
+        border: 1px solid black;
+         /* border-radius: 5px; */
+    
+}   
+    tr{
+        border: 1px solid black;
+        height: 30px;
+    }
+    td{
+        border: 1px solid black;
+        justify-content: center;
+        height: 20px;
+        font-size: 12px;
+    }
+    tr:nth-child(even){
+        background-color: rgba(126, 126, 137, 0.9);
+    }
+    tr:nth-child(odd){
+        background-color: rgb(178, 178, 194);
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table >
+            <thead>
+                <tr class="columns">
+                    <th class="column">
+                        ID
+                    </th>
+                    <th class="column">
+                        Name
+                    </th >                    
+                    <th class="column" >
+                        Price
+                    </th>
+                    
+                    <th class="column">
+                        TIME
+                    </th>                     
+                </tr>
+            </thead>  
+           
+            <tbody>
+                {% for dat in data %}
+                    <tr>
+                        <td>
+                            <h3>{{ dat.id }}</h3>
+                        </td>
+                        <td>
+                            {{ dat.name }}
+                        </td>
+                        <td>
+                            {{ dat.price }}
+                        </td>
+                    
+                       
+                        <td>
+                           {{ dat.time }}
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>  
+        </table>
+    </div>
+    
+</body>
+</html>
