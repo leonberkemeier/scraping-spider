@@ -24,8 +24,16 @@ class BookItem(scrapy.Item):
     price = scrapy.Field()
 
 
-class ABookItem(scrapy.Item):
-    name = scrapy.Field()
-    price = scrapy.Field()
-    time = scrapy.Field()
-    # time = timer
+# class ABookItem(scrapy.Item):
+#     name = scrapy.Field()
+#     price = scrapy.Field()
+#     time = scrapy.Field()
+#     # time = timer
+
+
+from scrapy.item import Item, Field
+
+class ABookItem(Item):
+    name = Field()
+    price = Field()
+    # time = Field()    

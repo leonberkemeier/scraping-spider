@@ -171,10 +171,10 @@
                     <label for="cars">Choose a car:</label>
                     <br>
                     <select id="cars" name="cars">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
+                        <option value="item_1">item_1</option>
+                        <option value="item_2">item_2</option>
+                        <option value="item_3">item_3</option>
+                        <option value="item_4">item_4</option>
                     </select>
                     <input type="submit">
                 </form>
@@ -182,9 +182,9 @@
             <div class="name">
                <div class="productname">
                     <div class="product">
-                        <h2>
-                            Produktname
-                        </h2>
+                        <h1>Price:</h1>
+                        <h2>{{first.name}}</h2>
+                       
                     </div>
                </div>
                <div class="productinfo">
@@ -200,6 +200,8 @@
                 <h2>
                     chart
                 </h2>
+                {% block cointent %}
+                {% endblock cointent %}
             </div>
         </div>
 
@@ -210,8 +212,25 @@
             <h2>
                 werte
             </h2>
+            <br>
+            <tbody>
+                {% for x in data %}
+                <tr>
+                    <td>
+                        {{x.price}}
+                    </td>
+                    <td>
+                        {{x.time}}
+                    </td>
+                    <td>
+                        {{x.name}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </div>
 
+        
 
     </div>
 

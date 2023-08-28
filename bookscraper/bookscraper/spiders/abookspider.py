@@ -7,9 +7,9 @@ from bookscraper.items import ABookItem
 from datetime import datetime
 import logging
 
-time = datetime.now()
+date = datetime.now()
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 class AbookspiderSpider(scrapy.Spider):
     name = "abookspider"
@@ -19,6 +19,8 @@ class AbookspiderSpider(scrapy.Spider):
 
 
     def parse(self, response):
+
+        
         books = response.css('article.product_pod')
         
         
@@ -35,7 +37,8 @@ class AbookspiderSpider(scrapy.Spider):
 
         abook_item['name'] =response.css('h1 ::text').get(),
         abook_item['price'] =response.css('.price_color ::text').get(),
-        abook_item['time'] = time,
+        
+        # abook_item['time'] = date,
         # abook_item['time'] = time       
 
         yield abook_item
