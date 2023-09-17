@@ -57,5 +57,19 @@ def dar(request):
 
 
 def chart(request):
-    data = data = Book.objects.all()
-    return render(request, "rootapp/chunkychart.html",{'data': data,})
+    data = Book.objects.all()
+
+    # after=request.GET.get('after', None)
+    # before=request.GET.get('before', None)
+
+    # rdata = Book.objects.filter(name=True).order_by('-id')[0]
+    # rdata = Book.objects.reverse()[0]
+    rdata = Book.objects.order_by('-id')
+    ldata = Book.objects.order_by('-id')[0]
+    context={
+        'rdata': rdata,
+        'data':data,
+        'ldata':ldata,
+    }
+   
+    return render(request, "rootapp/chunkychart.html",context)
