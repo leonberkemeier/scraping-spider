@@ -35,25 +35,30 @@
         }
          tr:nth-child(even){
         background-color: rgba(126, 126, 137, 0.361);
-    }
-    tr:nth-child(odd){
-        background-color: rgb(178, 178, 194);
+        }
+        tr:nth-child(odd){
+            background-color: rgb(178, 178, 194);
+            
+        }
+        .table-container{
+            position: relative;
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            border-radius: 5px;
+        }
+        th {
+            background-color: rgb(54, 54, 54);
+            color: white;
+            border: 1px solid black;
+            /* border-radius: 5px; */
         
-    }
-    .table-container{
-        position: relative;
-        justify-content: center;
-        display: flex;
-        text-align: center;
-        border-radius: 5px;
-    }
-    th {
-        background-color: rgb(54, 54, 54);
-        color: white;
-        border: 1px solid black;
-         /* border-radius: 5px; */
-    
-}
+         }
+         .reverse-table{
+            background: green;
+            height: 100vw;
+            width: 100;
+         }
     </style>
 </head>
 <body>
@@ -84,6 +89,11 @@
 
               
                 
+            </div>
+            <div class="reverse-table">
+                <tbody>
+
+                </tbody>
             </div>
         </div>        
     </div>
